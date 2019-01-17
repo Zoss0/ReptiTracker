@@ -1,2 +1,2 @@
 # ReptiTracker
-A tracker for your Repiile
+A tracker for your Reptile
