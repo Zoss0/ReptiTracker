@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
 import 'dart:io';
+import 'NewReptile.dart';
 
 void main() => runApp(MyApp());
 
@@ -40,7 +41,8 @@ class _MyHomePageState extends State<MyHomePage> {
       //Drawer for left hand side menu
       drawer: Drawer(
         child: ListView(
-          padding: EdgeInsets.zero, //Remove padding - adds color to the top bit of the box
+          //Remove padding - adds color to the top bit of the box
+          padding: EdgeInsets.zero,
           children: <Widget>[
             DrawerHeader(
               child: Text('Reptiles:'),
@@ -59,6 +61,30 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         )
       ),
+
+      //Right side drawer for management.
+      endDrawer: Drawer(
+        //Create a list, containing tiles for interactivity.
+        child: ListView(
+          //Remove padding - adds color to the top bit of the box
+          padding: EdgeInsets.zero,
+          children: <Widget>[
+            //Set the header - clearly for management of the reptiles. (TODO: Change this depending on context?)
+            DrawerHeader(
+              child: Text('Management:')
+              ),
+            ListTile(
+              title: Text('Add a reptile'),
+              onTap: () {
+                //Close the drawer, navigate to new reptile page.
+                Navigator.pop(context);
+                Navigator.push(context, MaterialPageRoute(builder: (context) => NewReptile()),
+                );
+              },
+            )
+          ],
+          )
+        ),
 
       body: Center(
         child: Column(
