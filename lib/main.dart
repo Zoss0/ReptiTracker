@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'dart:async';
 import 'dart:io';
 import 'NewReptile.dart';
+import 'Db.dart';
 
 void main() => runApp(MyApp());
 
@@ -32,6 +33,8 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+    Db database = new Db();
+    database.test();
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
